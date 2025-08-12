@@ -1,15 +1,6 @@
-
 # Tokenizer CLI
 
-
 A Node.js command-line tool for tokenizing text to encoding tokens using hashes, and reconstructing the original text from hashes.This tokenizer uses a custom vocabulary according to user input.
-
-
-
-
-
-
-
 
 ## Features
 
@@ -24,6 +15,7 @@ A Node.js command-line tool for tokenizing text to encoding tokens using hashes,
 - Compare: Compare original input to reconstruted text.
 
 - Interactive CLI: Continuously accepts user input until the end command is issued.
+
 ## Run Locally
 
 Clone the project
@@ -69,7 +61,6 @@ The program will prompt you to enter text. Type your input and press Enter. To e
   *encodeTokens* - Encodes each token into a numeric hash value using a polynomial rolling hash function.
 
   *decodeToTokens* - Decodes a list of hash values back into their original tokens using the provided hash map
-
 
 ## Examples-
 
