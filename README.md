@@ -21,7 +21,7 @@ A Node.js command-line tool for tokenizing text to encoding tokens using hashes,
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/av-amit404/custom_tokenizer.git
 ```
 
 Go to the project directory
