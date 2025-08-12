@@ -1,7 +1,7 @@
 
 // It run recusively till 'end' command is not given.
 const readline = require('readline');
-const { tokenize, reconstructFromTokens, compareOriginalReconstructed } = require('./tokenizer');
+const { tokenizewhitespaces,tokenize, reconstructFromTokens, compareOriginalReconstructed } = require('./tokenizer');
 const { encodeTokens, decodeToTokens } = require('./encoder');
 
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
@@ -17,10 +17,14 @@ const ask = (q) => new Promise(res => rl.question(q, res));
     const tokens = tokenize(input);
     console.log("Tokens:", tokens);
 
+    // Tokenizing the string with all white spaces
+    const token = tokenizewhitespaces(input);
+    // console.log("Tokens:", token);
+
     // Encoding tokens to numbers.
     const {hashList, hashMap} = encodeTokens(tokens);
     console.log("Encoded Tokens:", hashList);
-    console.log("HASHMAP:", hashMap);
+    // console.log("HASHMAP:", hashMap);
 
     // Decoding the number back to token.
     const decoded = decodeToTokens(hashList, hashMap);
@@ -31,8 +35,8 @@ const ask = (q) => new Promise(res => rl.question(q, res));
     console.log("Reconstructed:", JSON.stringify(reconstructed));
 
     // Comapring the original string to reconstructed.
-    console.log("Exact match:", compareOriginalReconstructed(input, reconstructed));
-    // console.log('---');
+    console.log("Exact match:", compareOriginalReconstructed(tokens, decoded));
+    console.log('---');
   }
   rl.close();
 })();

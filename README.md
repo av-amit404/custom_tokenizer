@@ -21,13 +21,13 @@ A Node.js command-line tool for tokenizing text to encoding tokens using hashes,
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/av-amit404/custom_tokenizer
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd custom_tokenizer
 ```
 
 Install dependencies
@@ -54,7 +54,7 @@ The program will prompt you to enter text. Type your input and press Enter. To e
 
   *reconstructFromTokens* - Reconstructs the original string from the list of tokens.
   
-  *compareOriginalReconstructed* - Compares the original input string with the reconstructed string and logs whether they match.
+  *compareOriginalReconstructed* - Compares the original token generated with the decode tokens and logs whether they match.
 
 **encoder.js** - Has two function which are used for encoding and decoding.
 
@@ -65,28 +65,18 @@ The program will prompt you to enter text. Type your input and press Enter. To e
 ## Examples-
 
 ```javascript
-Enter text ('end' to quit): Hi Hello Hello1 Hello hi
-Tokens: [ 'Hi ', 'Hello ', 'Hello1 ', 'Hello ', 'hi' ]
-Encoded Tokens: [ 72479, 157899164, 894874607, 157899164, 3329 ]
-HASHMAP: Map(4) {
-  72479 => 'Hi ',
-  157899164 => 'Hello ',
-  894874607 => 'Hello1 ',
-  3329 => 'hi'
-}
-Reconstructed: "Hi Hello Hello1 Hello hi"
+Enter text ('end' to quit): hi    hi Hello needed   hi
+Tokens: [ 'hi', 'hi', 'Hello', 'needed', 'hi' ]
+Encoded Tokens: [ 3329, 3329, 69609650, 245590426, 3329 ]
+Reconstructed: "hi hi Hello needed hi"
 Exact match: true
-Enter text ('end' to quit): Hi     Hello                3 Tabs
-Tokens: [ 'Hi     ', 'Hello \t\t', '3 ', 'Tabs' ]
-Encoded Tokens: [ 936863053, 741095533, 1613, 2598814 ]
-HASHMAP: Map(4) {
-  936863053 => 'Hi     ',
-  741095533 => 'Hello \t\t',
-  1613 => '3 ',
-  2598814 => 'Tabs'
-}
-Reconstructed: "Hi     Hello \t\t3 Tabs"
+---
+Enter text ('end' to quit): hi ; ! hello ; good evening
+Tokens: [ 'hi', ';', '!', 'hello', ';', 'good', 'evening' ]
+Encoded Tokens: [ 3329, 59, 33, 99162322, 59, 3178685, 112767811 ]
+Reconstructed: "hi ; ! hello ; good evening"
 Exact match: true
+---
 Enter text ('end' to quit): end
 ```
 
